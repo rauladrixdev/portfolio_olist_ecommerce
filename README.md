@@ -25,7 +25,7 @@ A análise cruzada entre os dados de entrega, localização geográfica dos clie
 
 O gráfico abaixo foi gerado automaticamente pelo script Python e exportado em alta resolução, destacando os 10 estados com piores índices de pontualidade:
 
-![Top 10 Estados com Maior Taxa de Atraso](dados/grafico_top10_atrasos.png)
+![Top 10 Estados com Maior Taxa de Atraso](data/grafico_top10_atrasos.png)
 
 ---
 
