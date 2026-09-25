@@ -1,35 +1,71 @@
-# Análise de Performance Logística e Impacto Financeiro (E-commerce Olist)
+# 🚚 Análise de Performance Logística e Impacto Financeiro — E-commerce Olist
 
-Análise exploratória desenvolvida em Python para auditar dados de uma operação real de e-commerce, mapear gargalos logísticos estaduais e mensurar o impacto financeiro dos atrasos de entrega para o cliente final.
+Análise exploratória desenvolvida em Python a partir do dataset público da Olist, com foco na identificação de gargalos logísticos, análise de atrasos de entrega e avaliação de possíveis impactos financeiros relacionados ao frete.
 
 ## 📌 Contexto do Projeto
-Em operações de e-commerce, a última milha (*last mile*) é crucial para a retenção do cliente. Utilizando o dataset público da Olist, este projeto realiza o ciclo completo de dados (Data Pipeline): desde a carga, passando por uma limpeza rigorosa de dados nulos e inconsistências de tipos, até a geração de inteligência de negócio e visualização de dados.
 
-## 🛠️ Tecnologias Utilizadas
+Em operações de e-commerce, o desempenho das entregas pode influenciar diretamente a experiência do cliente.
+
+Neste projeto, foi utilizado o dataset público da Olist para realizar uma análise dos dados de pedidos, explorando informações relacionadas a prazo de entrega, localização dos clientes e valores de frete.
+
+O trabalho envolve etapas de preparação, limpeza, integração e análise dos dados, buscando transformar os dados brutos em informações que possam facilitar a identificação de padrões e gargalos logísticos.
+
+## 🛠️ Tecnologias e Ferramentas
+
 * **Python 3.12**
-* **Pandas:** Limpeza, manipulação, cruzamento de tabelas (`merge`) e agregações (`groupby`).
-* **Seaborn & Matplotlib:** Geração de gráficos estatísticos e visuais de alta fidelidade.
-* **PyCharm IDE & Git/GitHub:** Controle de versão e ambiente de desenvolvimento.
+* **Pandas** — limpeza, manipulação, cruzamento de tabelas (`merge`) e agregações (`groupby`)
+* **NumPy** — operações e tratamento numérico
+* **PyCharm** — ambiente de desenvolvimento
+* **Git/GitHub** — versionamento e gerenciamento do projeto
 
-## 📈 Principais Insights de Negócio
+## 📈 Principais Análises
 
-A análise cruzada entre os dados de entrega, localização geográfica dos clientes e valores financeiros revelou diagnósticos críticos para a diretoria:
+### 1. Gargalos de entrega por estado
 
-1. **O Gargalo de Alagoas (AL):** Lidera o ranking nacional com **20.8% de taxa de atraso**. Praticamente 1 a cada 5 clientes do estado recebe seu produto fora do prazo estimado, enfrentando uma espera média de 24 dias.
-2. **A Anomalia Operacional do Rio de Janeiro (RJ):** Estados do Norte e Nordeste justificam tempos longos pela distância dos polos de distribuição (Sudeste) e fretes elevados. No entanto, o **Rio de Janeiro figura em 7º lugar no ranking de atrasos (11.6%)**, mesmo apresentando um frete barato (R$ 20.91) e proximidade geográfica. Isso aponta para uma ineficiência puramente operacional na distribuição local ou problemas de segurança urbana na malha fluminense.
-3. **Penalização Financeira:** Clientes com entregas severamente atrasadas (mais de 50 dias) pagaram, em média, **39.8% a mais pelo frete** (R$ 27.82 vs R$ 19.90) comparado a entregas normais. O cliente mais prejudicado pela logística foi o que mais pagou pelo serviço.
+A análise dos dados identificou diferenças relevantes nas taxas de atraso entre os estados brasileiros.
 
----
+Alagoas apresentou uma taxa de atraso de **20,8%**, com tempo médio de espera de aproximadamente **24 dias** no conjunto analisado.
 
-## 📊 Visualização dos Dados (Gargalos Estaduais)
+### 2. Comparação do desempenho logístico
 
-O gráfico abaixo foi gerado automaticamente pelo script Python e exportado em alta resolução, destacando os 10 estados com piores índices de pontualidade:
+O Rio de Janeiro apresentou uma taxa de atraso de **11,6%**, ocupando a 7ª posição entre os estados analisados, enquanto o frete médio observado foi de **R$ 20,91**.
+
+A comparação permite investigar diferenças de desempenho logístico mesmo entre regiões com características geográficas distintas.
+
+### 3. Relação entre atraso e frete
+
+Na análise realizada, pedidos com atrasos superiores a 50 dias apresentaram frete médio de **R$ 27,82**, enquanto entregas consideradas normais apresentaram média de **R$ 19,90**.
+
+Isso representa uma diferença média de aproximadamente **39,8%** no valor do frete entre os dois grupos analisados.
+
+## 📊 Visualização dos Dados
+
+O projeto também conta com visualizações destinadas a facilitar a identificação dos estados com maiores taxas de atraso.
 
 ![Top 10 Estados com Maior Taxa de Atraso](data/grafico_top10_atrasos.png)
 
----
-
 ## 📁 Estrutura do Repositório
-* `limpeza_dados.py`: Script Python com o pipeline completo de engenharia e análise.
-* `dados/grafico_top10_atrasos.png`: Gráfico gerado para o relatório executivo.
-* `.gitignore`: Configuração para impedir o upload dos datasets pesados (.csv) originais.
+
+```text
+📦 portfolio_olist_ecommerce
+├── 📄 limpeza_dados.py
+├── 📁 data
+│   └── 📊 grafico_top10_atrasos.png
+├── 📁 dados
+├── 📄 .gitignore
+└── 📄 README.md
+```
+
+### `limpeza_dados.py`
+
+Script responsável pelas etapas de preparação e análise dos dados utilizadas no projeto.
+
+### `.gitignore`
+
+Configuração utilizada para evitar o envio de arquivos de dados pesados ou que não precisam fazer parte do repositório.
+
+## 🎯 Objetivo
+
+Este projeto foi desenvolvido como parte dos meus estudos em Python e análise de dados, buscando praticar manipulação de dados, exploração de informações e interpretação de indicadores logísticos.
+
+O objetivo principal é transformar dados públicos em análises que permitam compreender melhor o comportamento das entregas e identificar possíveis pontos de atenção na operação.
